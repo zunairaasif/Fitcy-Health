@@ -1,0 +1,19 @@
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+
+[context.main.environment]
+    REACT_APP_API_URL = "https://api.fitcyhealth.com"
+    REACT_APP_AGORA_APP_ID = "82a0c8d8f2a94f25bcd20625b3a1f058"
+    REACT_APP_ENV = "production"
+    REACT_APP_STRIPE_KEY = "pk_live_xcSIihoJF6cmlFWPd29RC21j00LxlYq3xV"  
+    REACT_APP_SENTRY_DSN = "https://b49faee6736d4189943d7a9db240ee71@o1285781.ingest.sentry.io/6498590"  
+
+[context.newdev.environment]
+    REACT_APP_API_URL = "https://devapi.fitcyhealth.com"
+    REACT_APP_AGORA_APP_ID = "82a0c8d8f2a94f25bcd20625b3a1f058" 
+    REACT_APP_ENV = "development"
+    REACT_APP_STRIPE_KEY = "pk_test_JNKm0xfxFgcV6AHoyXMxQGN100qvXFhl2q"
+    REACT_APP_SENTRY_DSN = "https://be9a5973952e43168404326d5a44f82a@o1285781.ingest.sentry.io/6525673"  
+

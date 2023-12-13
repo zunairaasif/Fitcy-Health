@@ -1,0 +1,63 @@
+.nav_main {
+  /* background-color: var(--primary); */
+  /* box-shadow: var(--boxshadow-soft); */
+  /* z-index: 99; */
+  /* position: sticky; */
+  height: 70px;
+  width: 100%;
+}
+
+.nav_content {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header_main {
+  box-shadow: var(--boxshadow-soft);
+  background-color: #fff;
+  height: 8vh;
+  /* position: absolute; */
+  width: 100%;
+  z-index: 2;
+}
+
+.header_content {
+  display: flex;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoutButton {
+  color: var(--app-red);
+  background: none;
+  box-shadow: none;
+  font-weight: bold;
+}
+
+.bottom-nav {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgb(230, 230, 230);
+}
+
+.checkHeight {
+  max-height: calc(calc(var(--vh, 1vh) * 100) - 140px);
+  height: calc(calc(var(--vh, 1vh) * 100) - 140px);
+  width: 100%;
+}
+
+.checkHeighDesktop {
+  max-height: calc(100vh - 70px);
+  height: calc(100vh - 70px);
+  width: 100%;
+}
+
+.fullHeightCheck {
+  height: 100vh;
+}

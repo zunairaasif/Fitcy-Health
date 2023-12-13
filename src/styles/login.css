@@ -1,0 +1,88 @@
+.login_page {
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--primary);
+}
+
+.login_form {
+  padding: 24px;
+  background-color: white;
+  border-radius: var(--borderradius-site);
+  width: 30%;
+  box-shadow: var(--boxshadow-soft);
+}
+
+@media screen and (max-width: 786px) {
+  .login_page {
+    justify-content: center;
+  }
+
+  .login_form {
+    width: 80%;
+    height: 80%;
+  }
+}
+
+.leftAuth {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 786px) {
+  .leftAuth {
+    width: 100%;
+  }
+}
+
+.authForm {
+  display: flex;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.loginBottomBar {
+  position: fixed;
+  bottom: 0;
+  background-color: rgba(250, 250, 250, 1);
+  width: 100%;
+  color: rgba(158, 158, 158, 1);
+  font-size: small;
+  display: flex;
+  align-items: center;
+  /* z-index: 0; */
+  justify-content: center;
+  padding: 10px 0px;
+}
+
+@media screen and (max-width: 786px) {
+  .loginBottomBar {
+    width: 100%;
+  }
+}
+
+.rightAuth {
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+}
+
+@media screen and (max-width: 786px) {
+  .rightAuth {
+    display: none;
+  }
+}
+
+.promoimage {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}

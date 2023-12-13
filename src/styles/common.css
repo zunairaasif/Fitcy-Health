@@ -1,0 +1,293 @@
+.box-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.box-row-column-on-mobile {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 786px) {
+  .box-row-column-on-mobile {
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+}
+
+.box-row-nogap {
+  display: flex;
+  flex-direction: row;
+  /* gap: 1rem; */
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.h-50 {
+  height: 100%;
+}
+
+.box-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.box-column-nogap {
+  display: flex;
+  flex-direction: column;
+  /* gap: 1rem; */
+}
+
+.box {
+  display: flex;
+}
+
+.center-align {
+  justify-content: center;
+  align-items: center;
+}
+
+.bg_red {
+  background-color: red;
+}
+
+input {
+  border: 1px solid #80808070;
+  padding: 10px;
+  border-radius: var(--borderradius-small);
+}
+
+button {
+  box-shadow: var(--boxshadow-soft);
+  border: none;
+  padding: 10px;
+  border-radius: var(--borderradius-small);
+}
+
+.container {
+  overflow-y: auto;
+}
+
+@media screen and (max-width: 786px) {
+  .hide_on_mobile {
+    display: none;
+  }
+}
+
+.googleButton {
+  background-color: #346ef1;
+  color: #fff;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 0px;
+  border-radius: var(--borderradius-small);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.or_divider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divider {
+  background-color: rgba(0, 0, 0, 0.12);
+  height: 1px;
+  width: 100%;
+}
+
+.defaultInput {
+  background-color: rgba(250, 250, 250, 1);
+  width: 100% !important;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-button-50 {
+  width: 52%;
+}
+
+.w-button-100 {
+  width: 100%;
+}
+
+.primary-btn {
+  background-color: var(--brand);
+  color: #fff;
+  font-size: medium;
+  cursor: pointer;
+  margin: 0;
+}
+
+.secondary-btn {
+  border: 1px solid #101112;
+  border-radius: 8px;
+  color: rgba(0, 150, 136, 1);
+  font-weight: bold;
+  background-color: #effffe;
+  cursor: pointer;
+  box-shadow: none;
+  margin: 0;
+}
+
+.third-btn {
+  background-color: #fff;
+  border: 1px solid rgba(0, 150, 136, 1);
+  cursor: pointer;
+  box-shadow: none;
+  margin: 0;
+  color: rgba(0, 150, 136, 1);
+}
+
+@media screen and (max-width: 786px) {
+  .third-btn {
+    background: #009688;
+    border-radius: 100px;
+    color: #fff;
+  }
+}
+
+.red-btn {
+  background-color: rgba(255, 235, 238, 1);
+  border: none;
+  cursor: pointer;
+  box-shadow: none;
+  margin: 0;
+  color: rgba(244, 67, 54, 1);
+}
+
+.defaultLabel {
+  /* width:100%; */
+  font-size: small;
+}
+
+.labelInputSet {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.disclaimer {
+  color: #9e9e9e;
+  font-size: small;
+}
+
+.greenLink {
+  color: var(--brand);
+  cursor: pointer;
+}
+
+.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.ptFont {
+  font-family: "PT Serif";
+}
+
+.centerText {
+  text-align: center;
+}
+
+.dotted-divider {
+  height: 1px;
+  border-top: 0.5px dashed #101112;
+  width: 100%;
+  padding-top: 20px;
+}
+
+/**
+* Shows how you can use CSS to style your Element's container.
+* These classes are added to your Stripe Element by default.
+* You can override these classNames by using the options passed
+* to the CardElement component.
+* https://stripe.com/docs/js/elements_object/create_element?type=card#elements_create-options-classes
+*/
+.StripeElement {
+  padding: 10px 12px;
+  border-radius: 4px;
+  background-color: #fafafa;
+  border: 1px solid rgba(158, 158, 158, 1);
+}
+
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.selection-radio {
+  /* Secondary Accent */
+
+  background: #effffe;
+  /* Primary */
+
+  border: 1px solid #009688;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.noOutline {
+  outline: transparent !important;
+  outline-width: 0px !important;
+  box-shadow: none !important;
+}
+
+.noOutline :focus {
+  outline: transparent !important;
+  outline-width: 0px !important;
+  box-shadow: none !important;
+}
+
+.noOutline :active {
+  outline: transparent !important;
+  outline-width: 0px !important;
+  box-shadow: none !important;
+}
+
+.noOutlineNoBorder {
+  outline: transparent !important;
+  outline-width: 0px !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.noOutlineNoBorder :focus {
+  outline: transparent !important;
+  outline-width: 0px !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.noOutlineNoBorder :active {
+  outline: transparent !important;
+  outline-width: 0px !important;
+  box-shadow: none !important;
+  border: none !important;
+}

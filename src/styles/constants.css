@@ -1,0 +1,9 @@
+:root {
+  --brand: #ffffff;
+  --primary: #e0f2f1;
+  --brand: rgba(0, 150, 136, 1);
+  --borderradius-site: 10px;
+  --borderradius-small: 4px;
+  --boxshadow-soft: #80808080 0px 0px 4px;
+  --app-red: #f44336;
+}

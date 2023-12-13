@@ -1,0 +1,338 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "fitcy API",
+    "description": "fitcy-health",
+    "contact": {
+      "email": "amsal134215@gmail.com"
+    },
+    "version": "v1"
+  },
+  "host": "api.fitcyhealth.com",
+  "schemes": ["https"],
+  "basePath": "/",
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "securityDefinitions": {
+    "Basic": {
+      "type": "basic"
+    }
+  },
+  "security": [
+    {
+      "Basic": []
+    }
+  ],
+  "paths": {
+    "/api/register/": {
+      "post": {
+        "operationId": "api_register_user",
+        "description": "Register User",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserRegister"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UserRegister"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/token/": {
+      "post": {
+        "operationId": "api_token_create",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TokenObtainUser"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/TokenObtainUser"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/token/refresh/": {
+      "post": {
+        "operationId": "api_token_refresh_create",
+        "description": "Takes a refresh type JSON web token and returns an access type JSON web\ntoken if the refresh token is valid.",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TokenRefresh"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/TokenRefresh"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/token/verify/": {
+      "post": {
+        "operationId": "api_token_verify_create",
+        "description": "Takes a token and indicates if it is valid.  This view provides no\ninformation about a token's fitness for a particular use.",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TokenVerify"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/TokenVerify"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/auth/password-reset/": {
+      "post": {
+        "operationId": "auth_password-reset_create",
+        "summary": "An Api View which provides a method to request a password reset token based on an e-mail address",
+        "description": "Sends a signal reset_password_token_created when a reset token was created",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Email"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Email"
+            }
+          }
+        },
+        "tags": ["auth"]
+      },
+      "parameters": []
+    },
+    "/auth/password-reset/confirm/": {
+      "post": {
+        "operationId": "auth_password-reset_confirm_create",
+        "description": "An Api View which provides a method to reset a password based on a unique token",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PasswordToken"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/PasswordToken"
+            }
+          }
+        },
+        "tags": ["auth"]
+      },
+      "parameters": []
+    },
+    "/auth/password-reset/validate_token/": {
+      "post": {
+        "operationId": "auth_password-reset_validate_token_create",
+        "description": "An Api View which provides a method to verify that a token is valid",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ResetToken"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ResetToken"
+            }
+          }
+        },
+        "tags": ["auth"]
+      },
+      "parameters": []
+    }
+  },
+  "definitions": {
+    "UserRegister": {
+      "required": ["email", "username", "password"],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "email": {
+          "title": "Email address",
+          "type": "string",
+          "format": "email",
+          "maxLength": 254,
+          "minLength": 1
+        },
+        "first_name": {
+          "title": "First name",
+          "type": "string",
+          "maxLength": 150
+        },
+        "last_name": {
+          "title": "Last name",
+          "type": "string",
+          "maxLength": 150
+        },
+        "username": {
+          "title": "Username",
+          "description": "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.",
+          "type": "string",
+          "pattern": "^[\\w.@+-]+$",
+          "maxLength": 150,
+          "minLength": 1
+        },
+        "password": {
+          "title": "Password",
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "TokenObtainUser": {
+      "required": ["username", "password"],
+      "type": "object",
+      "properties": {
+        "username": {
+          "title": "Username",
+          "type": "string",
+          "minLength": 1
+        },
+        "password": {
+          "title": "Password",
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "TokenRefresh": {
+      "required": ["refresh"],
+      "type": "object",
+      "properties": {
+        "refresh": {
+          "title": "Refresh",
+          "type": "string",
+          "minLength": 1
+        },
+        "access": {
+          "title": "Access",
+          "type": "string",
+          "readOnly": true,
+          "minLength": 1
+        }
+      }
+    },
+    "TokenVerify": {
+      "required": ["token"],
+      "type": "object",
+      "properties": {
+        "token": {
+          "title": "Token",
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "Email": {
+      "required": ["email"],
+      "type": "object",
+      "properties": {
+        "email": {
+          "title": "Email",
+          "type": "string",
+          "format": "email",
+          "minLength": 1
+        }
+      }
+    },
+    "PasswordToken": {
+      "required": ["password", "token"],
+      "type": "object",
+      "properties": {
+        "password": {
+          "title": "Password",
+          "type": "string",
+          "minLength": 1
+        },
+        "token": {
+          "title": "Token",
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "ResetToken": {
+      "required": ["token"],
+      "type": "object",
+      "properties": {
+        "token": {
+          "title": "Token",
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

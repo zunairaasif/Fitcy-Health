@@ -1,0 +1,313 @@
+@import "/src/styles/agora.css";
+/* Using a string */
+@import "/src/styles/constants.css";
+/* Define all constants here, dont use magic numbers*/
+@import "/src/styles/common.css";
+/* Define all constants here, dont use magic numbers*/
+@import "/src/styles/login.css";
+/* Define all constants here, dont use magic numbers*/
+@import "/src/styles/navbar.css";
+/* Define all constants here, dont use magic numbers*/
+@import "/src/styles/onboarding.css";
+/* Define all constants here, dont use magic numbers*/
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  /* background-color: red; */
+  margin: 0;
+  padding: 0;
+}
+
+.Toastify__toast-body {
+  white-space: pre-line;
+}
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+input {
+  box-sizing: border-box;
+}
+
+#log {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+  height: 100%;
+  /* max-height: 550px; */
+  overflow-y: auto;
+  font-size: 1.25rem;
+  /* margin: 0 auto 1rem; */
+  padding: 0.5rem 1.5rem;
+}
+
+.recievedMessage {
+  align-self: flex-start;
+  position: relative;
+  margin-top: 20px;
+  margin-left: 20px;
+  word-wrap: break-word;
+
+  font-size: 16px;
+  border-radius: 0px 8px 8px 8px;
+  max-width: 70%;
+  padding: 0.5rem 0.875rem;
+  background-color: #f2f2f7;
+  color: #333333;
+}
+
+.recievedMessage::before,
+.recievedMessageImage::before {
+  content: "";
+  position: absolute;
+  left: 2%;
+  top: 0;
+  width: 0;
+  height: 0;
+  border: 31px solid transparent;
+  border-right-color: #f2f2f7;
+  border-left: 0;
+  border-top: 0;
+  margin-top: 0;
+  margin-left: -31px;
+}
+
+.recievedMessageImage {
+  align-self: flex-start;
+  position: relative;
+  margin-top: 20px;
+  border-radius: 0px 8px 8px 8px;
+
+  margin-left: 20px;
+  padding: 0.5rem 0.875rem;
+
+  background-color: white;
+  color: #000;
+}
+
+.recievedMessageImage > img {
+  max-width: 200px;
+}
+
+.sentMessage {
+  align-self: flex-end;
+  position: relative;
+  margin-top: 20px;
+  border-radius: 8px 0px 8px 8px;
+  padding: 0.5rem 0.875rem;
+  font-size: 16px;
+  max-height: fit-content;
+  max-width: 70%;
+  word-wrap: break-word;
+  background-color: #007aff;
+  color: white;
+}
+
+.unreadBadge {
+  color: #1b3664 !important;
+  font-size: x-small;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+  border-radius: 20px;
+  background-color: #2ec3f7;
+  padding: 1px;
+  height: 20px;
+  width: 20px;
+}
+
+.messageSender {
+  font-size: small;
+  font-weight: bold;
+  color: black;
+}
+
+.sentMessage::after,
+.sentMessageImage::after {
+  content: "";
+  position: absolute;
+  top: 0;
+
+  left: 102%;
+  width: 0;
+  height: 0;
+  border: 31px solid transparent;
+  border-top-color: #007aff;
+  border-bottom: 0;
+  border-left: 0;
+  margin-left: -15.5px;
+  margin-bottom: -31px;
+}
+
+.sentMessageImage {
+  align-self: flex-end;
+  margin-top: 20px;
+  position: relative;
+  border-radius: 8px 0px 8px 8px;
+
+  padding: 0.5rem 0.875rem;
+
+  background-color: #395e9d;
+}
+
+.sentMessageImage > img {
+  max-width: 200px;
+}
+
+.timeStampMessageSend {
+  font-size: 12px;
+  color: #395e9d;
+}
+
+.timeStampMessageRecieve {
+  font-size: 12px;
+  color: #333333;
+}
+
+.messageWrapperSend {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.checkmark {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+  transform: rotate(45deg);
+}
+
+.checkmark_stem {
+  position: absolute;
+  width: 3px;
+  height: 9px;
+  background-color: blue;
+  left: 11px;
+  top: 6px;
+}
+
+.checkmark_kick {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: blue;
+  left: 8px;
+  top: 12px;
+}
+
+.messageWrapperRecieve {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.react-calendar {
+  border: none !important;
+  padding: none;
+}
+
+.react-calendar button {
+  background: none;
+  box-shadow: none;
+  padding: none;
+  /* border: none; */
+}
+
+.react-calendar button:disabled {
+  background: none;
+}
+
+.react-calendar button:active {
+  background: #009688;
+}
+
+.react-calendar__tile--active {
+  background-color: #009688 !important;
+  border-radius: 50px;
+}
+
+.react-calendar__month-view__days__day--weekend:disabled {
+  color: rgba(16, 16, 16, 0.3) !important;
+}
+
+.react-calendar__month-view__days__day--weekend {
+  color: black !important;
+}
+
+.react-calendar__tile {
+  padding: none !important;
+}
+
+#react-time-range select {
+  background-color: rgba(225, 245, 254, 1) !important;
+  border: none !important;
+  padding: 8px !important;
+}
+
+#react-time-range .error {
+  font-size: small !important;
+}
+
+.rbc-button-link {
+  box-shadow: none !important;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.ooga {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.oogaText {
+  font-size: small;
+  color: #000;
+  text-align: center;
+}
+
+/* 
+.widget-app-container {
+  padding-bottom: 200px !important;
+} */
+
+p {
+  display: block;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.onboardingCalender {
+  /* background-color: green !important; */
+  width: 100% !important;
+}
